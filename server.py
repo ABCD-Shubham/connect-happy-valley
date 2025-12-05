@@ -6,7 +6,7 @@ from pinecone import Pinecone
 app = Flask(__name__, static_folder='.')
 
 # Pinecone configuration
-PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY", "pcsk_6tHWnQ_UNeVU3sQFeRbjzsMiVcC3FrGKN4gtJxVkMeXy89uJm5LFftdZ5ZLL7sV24hCcBD")
+PINECONE_API_KEY = "pcsk_6tHWnQ_UNeVU3sQFeRbjzsMiVcC3FrGKN4gtJxVkMeXy89uJm5LFftdZ5ZLL7sV24hCcBD"
 PINECONE_INDEX_NAME = "connect-happy-valley"
 
 def parse_restaurant_text(text):
@@ -191,6 +191,5 @@ def get_restaurants():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 3000))
-    print(f"Starting server on http://0.0.0.0:{port}")
-    app.run(host='0.0.0.0', port=port)
+    print("Starting server on http://localhost:3000")
+    app.run(port=3000)

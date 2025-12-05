@@ -1,3 +1,2 @@
 Flask>=3.1.0
 pinecone>=5.0.0
-gunicorn>=21.2.0

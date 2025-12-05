@@ -18,7 +18,7 @@ let restaurants = [];
 
 async function loadRestaurantData() {
     try {
-        const response = await fetch(`${ENV.BACKEND_URL}/api/restaurants`);
+        const response = await fetch('/api/restaurants');
         if (!response.ok) {
             throw new Error('Failed to fetch restaurant data');
         }
